@@ -1,4 +1,6 @@
-//! High-performance, general-use implementations of the Keccak-p permutation.
+//! High-performance, pure-Rust implementation of the Keccak-p permutation.
+//!
+//! Optimized for generic 64-bit processors.
 
 #![no_std]
 

@@ -1,6 +1,8 @@
 # keccak-p
 
-High performance, pure-Rust implementations of the Keccak-_p_ permutation.
+High performance, pure-Rust implementation of the Keccak-_p_ permutation.
+
+Optimized for generic 64-bit performance.
 
 ## License
 
