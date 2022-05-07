@@ -1,5 +1,5 @@
 [package]
-name = "keccak_p"
+name = "keccak-p"
 version = "0.1.0"
 authors = ["Coda Hale <coda.hale@gmail.com>"]
 edition = "2021"
