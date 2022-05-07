@@ -1,0 +1,22 @@
+[package]
+name = "keccak_p"
+version = "0.1.0"
+authors = ["Coda Hale <coda.hale@gmail.com>"]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+description = "High-performance implementations of the Keccak-p permutation."
+homepage = "https://github.com/codahale/keccak-p"
+documentation = "https://docs.rs/keccak-p/"
+keywords = ["crypto", "sponge", "keccak-f", "keccak", "keccak-p", "no-std"]
+categories = ["cryptography", "no-std"]
+readme = "README.md"
+include = ["benches/**/*.rs", "src/**/*.rs", "tests/**/*.rs", "README.md", "LICENSE-APACHE", "LICENSE-MIT"]
+
+[dev-dependencies]
+criterion = { version = "0.3.5", features = ["html_reports"] }
+keccak = "0.1.0"
+tiny-keccak = { version = "2.0.2", features = ["keccak", "k12"] }
+
+[[bench]]
+name = "benchmarks"
+harness = false
