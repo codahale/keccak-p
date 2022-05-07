@@ -1,4 +1,4 @@
-//! High-performance, pure-Rust implementation of the Keccak-p permutation.
+//! High-performance, pure-Rust implementation of the Keccak-_p_ permutation.
 //!
 //! Optimized for generic 64-bit processors.
 
@@ -6,7 +6,7 @@
 
 mod macros;
 
-/// The Keccak-p\[1600,12\] permutation.
+/// The Keccak-_p_\[1600,12\] permutation.
 ///
 /// ```rust
 /// use keccak_p::keccak_p1600_12;
@@ -36,7 +36,7 @@ pub fn keccak_p1600_12(lanes: &mut [u64; 25]) {
     );
 }
 
-/// The Keccak-p\[1600,14\] permutation.
+/// The Keccak-_p_\[1600,14\] permutation.
 ///
 /// ```rust
 /// use keccak_p::keccak_p1600_14;
@@ -73,7 +73,7 @@ pub fn keccak_p1600_14(lanes: &mut [u64; 25]) {
     );
 }
 
-/// The Keccak-f\[1600\] permutation.
+/// The Keccak-_f_\[1600\] permutation.
 ///
 /// ```rust
 /// use keccak_p::keccak_f1600;
