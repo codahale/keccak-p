@@ -14,7 +14,7 @@ include = ["benches/**/*.rs", "src/**/*.rs", "tests/**/*.rs", "README.md", "LICE
 
 [dev-dependencies]
 criterion = { version = "0.4.0", features = ["html_reports"] }
-keccak = "0.1.0"
+keccak = "0.1.2"
 tiny-keccak = { version = "2.0.2", features = ["keccak", "k12"] }
 
 [[bench]]
