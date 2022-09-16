@@ -1,6 +1,6 @@
 use criterion::{criterion_group, criterion_main, Criterion, Throughput};
 
-use keccak_p::{keccak_f1600, keccak_p1600_12, keccak_p1600_14};
+use keccak_p::{keccak_f1600, keccak_p1600_10, keccak_p1600_12, keccak_p1600_14};
 
 fn permutation_benchmarks(c: &mut Criterion) {
     let mut g = c.benchmark_group("permutation");
@@ -29,6 +29,10 @@ fn permutation_benchmarks(c: &mut Criterion) {
     g.bench_function("Keccak-p1600-12", |b| {
         let mut lanes = [0u64; 25];
         b.iter(|| keccak_p1600_12(&mut lanes))
+    });
+    g.bench_function("Keccak-p1600-10", |b| {
+        let mut lanes = [0u64; 25];
+        b.iter(|| keccak_p1600_10(&mut lanes))
     });
     g.finish();
 }

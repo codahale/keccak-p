@@ -6,6 +6,37 @@
 
 mod macros;
 
+/// The Keccak-_p_\[1600,10\] permutation.
+///
+/// ```rust
+/// use keccak_p::keccak_p1600_10;
+///
+/// let mut lanes = [0u64; 25];
+/// keccak_p1600_10(&mut lanes);
+///
+/// println!("{:016X?}", lanes);
+///
+/// assert_eq!(lanes, [
+///     0x81C202C792E85167, 0x199CF08BB1055373, 0xCFCAAFF606833C61, 0x6FF1DDBD84FBFE3E, 0xC36E1F2D8E4FB5AC,
+///     0x1E1ACE68FCE61100, 0xBBC437EF0C7E20A0, 0x4CE2E358F0B83997, 0x2A679FB6824153D6, 0xA066B3A3B7C751D9,
+///     0x8672108F97ECB21A, 0x13B1EC3BC472E669, 0xAE30CE8F4C53D5FC, 0x0907207EF0365D1D, 0x1DBC58ED3E947C4B,
+///     0x84D5F116F40A0993, 0xE4C95C028E902279, 0x9A61EDC12BB83C08, 0x2A08CF0921551A3C, 0x9AD8EB75051E4376,
+///     0x7690FE56290F1C78, 0x784FDA53B4222CF2, 0xFD76A81535770BA8, 0x23F1CCD89BAFE99E, 0x39F21A054593284C,
+/// ]);
+/// ```
+#[inline(always)]
+#[allow(unused_assignments)]
+pub fn keccak_p1600_10(lanes: &mut [u64; 25]) {
+    iter_rounds!(
+        lanes,
+        (0x8000000000008089, 0x8000000000008003),
+        (0x8000000000008002, 0x8000000000000080),
+        (0x000000000000800a, 0x800000008000000a),
+        (0x8000000080008081, 0x8000000000008080),
+        (0x0000000080000001, 0x8000000080008008)
+    );
+}
+
 /// The Keccak-_p_\[1600,12\] permutation.
 ///
 /// ```rust
